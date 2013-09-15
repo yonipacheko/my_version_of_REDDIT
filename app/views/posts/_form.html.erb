@@ -1,0 +1,26 @@
+
+<%= render 'posts/error_form', obj: @post %>
+
+
+<!--
+
+New object (posts/new): POST to /posts
+Existing obj: PUT or PATCH to /posts/id (1, 2, 3, 4)
+
+-->
+
+
+<%= form_for @post do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  <br/>
+  <%= f.label 'Categories' %>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+    <% cb.label(class:'checkbox inline') {cb.check_box(class: 'checkbox') + cb.text} %>
+  <% end %>
+  <%= f.submit (@post.new_record? ? 'Create Post' : 'Update Post') %>
+<% end %>

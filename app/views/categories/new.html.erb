@@ -1,0 +1,11 @@
+<h3>Enter new category</h3>
+
+<%= render 'posts/error_form',  obj: @category %>
+
+<%= form_for @category do |c| %>
+  <%= c.label :name %>
+  <%= c.text_field :name %>
+  <br>
+  <%= c.submit 'Create category', class: 'btn btn-inverse' %>
+
+<% end  %>
