@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @other.user = User.find(1) #for now....
+    @post.user = User.find(1) #for now....
      if @post.save
        flash[:notice] = 'you created a post'
        redirect_to root_path

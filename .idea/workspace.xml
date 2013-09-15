@@ -13,7 +13,7 @@
     <file path="/post_category.rb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1378672604272" ignored="false" />
     <file path="/20130908210748_fix_column_name.rb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1378674546967" ignored="false" />
     <file path="/routes.rb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379224147939" ignored="false" />
-    <file path="/posts_controller.rb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379239389672" ignored="false" />
+    <file path="/posts_controller.rb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379241343653" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/plug_2/pl_1.html" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1378909975056" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/untitled2/de.html" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379076171853" ignored="false" />
     <file path="/de.html" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379075699494" ignored="false" />
@@ -102,7 +102,7 @@
       <file leaf-file-name="posts_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="10" selection-start="296" selection-end="296" vertical-scroll-proportion="0.55839413">
+            <state line="18" column="9" selection-start="295" selection-end="295" vertical-scroll-proportion="0.55839413">
               <folding />
             </state>
           </provider>
@@ -903,7 +903,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="10" selection-start="296" selection-end="296" vertical-scroll-proportion="0.55839413">
+        <state line="18" column="9" selection-start="295" selection-end="295" vertical-scroll-proportion="0.55839413">
           <folding />
         </state>
       </provider>
