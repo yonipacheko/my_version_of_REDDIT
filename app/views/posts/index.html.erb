@@ -5,7 +5,7 @@
     <li class="well">
       <%= link_to post.title, post_path(post) %><label for=" "><%= link_to 'edit', edit_post_path(post) %></label>
     <br/>
-
+      posted by <%= post.creator.username %> on <%= post.created_at %>
     </li>
   <% end %>
 </ul>
