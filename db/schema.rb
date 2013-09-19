@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130908210748) do
+ActiveRecord::Schema.define(version: 20130915190129) do
 
   create_table "categories", force: true do |t|
     t.string "name"
@@ -31,10 +31,12 @@ ActiveRecord::Schema.define(version: 20130908210748) do
   end
 
   create_table "posts", force: true do |t|
-    t.string  "url"
-    t.string  "title"
-    t.text    "description"
-    t.integer "user_id"
+    t.string   "url"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sqlite_sp_functions", id: false, force: true do |t|

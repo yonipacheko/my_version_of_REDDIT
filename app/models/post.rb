@@ -8,6 +8,9 @@ class Post < ActiveRecord::Base
   has_many :post_categories
 
   validates :title, presence: true
+
+  # OBS! this is a custom validation
+
   validate :bad_words  # pay atention at validate is in SINGULAR,
 
   #custom validation ex:

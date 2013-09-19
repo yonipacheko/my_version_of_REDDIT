@@ -1,2 +1,28 @@
-<h1 class="well">your reading this post with this title </h1>
-<p class="well"><%= link_to @post.title, fix_url(@post.url) %> </p>
+
+<h1 class="well">You are  reading this post with this title: </h1>
+
+<div class="well">
+  <p><%= link_to @post.title, fix_url(@post.url) %> </p>
+  <p>Description: <%= @post.description %> </p>
+</div>
+
+<h3>Comments</h3>
+
+<!-- Validation -->
+
+<%= render 'posts/error_form', obj: @comment %>
+
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.text_area :body %>
+  <p> <%= f.submit 'Create comment', class: 'btn btn-primary' %> </p>
+<% end %>
+
+<h3>List of comments</h3>
+<ul>
+  <% @post.comments.each do |c|  %>
+  <li><%= c.body %></li>
+  <% end %>
+</ul>
+
+
+
