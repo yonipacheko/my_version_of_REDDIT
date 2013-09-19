@@ -4,8 +4,11 @@
   <% @posts.each do |post| %>
     <li style="list-style: none;" class="well">
       <%= link_to post.title, post_path(post) %> [ <%= link_to 'edit', edit_post_path(post) %> ]
-      <p>posted by <%= post.creator.username %> on <%= pretty_date(post.created_at) %></p>
+
+      <p>posted by <%= post.user.username %> on <%= pretty_date(post.created_at) %></p>
+
       <span class="badge badge-info"><%= post.comments.length %></span> <span style="color: #999;"><%= link_to 'comments inside', post_path(post) %></span>
+
     </li>
   <% end %>
 </ul>

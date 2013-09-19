@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
+
   end
 
   def show
@@ -19,7 +20,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.creator = User.find(1) #for now....
+    @post.user = User.find(1) #for now....
      if @post.save
        flash[:notice] = 'you created a post'
        redirect_to root_path

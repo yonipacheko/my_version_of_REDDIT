@@ -2,12 +2,13 @@ class Post < ActiveRecord::Base
 
   BADWORDS =  ['bad', 'words']
 
-  belongs_to :creator, class_name: 'User', foreign_key: 'user_id'
+  #belongs_to :creator, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :user
   has_many :comments
   has_many :categories, through: :post_categories
   has_many :post_categories
 
-  validates :title, presence: true
+  #validates :title, presence: true
 
   # OBS! this is a custom validation
 
