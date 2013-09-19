@@ -1,0 +1,13 @@
+<h5>Register</h5>
+
+ <%= render 'posts/error_form', obj: @user  %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%=  f.submit "Register", class: 'btn btn-primary' %>
+<% end %>
