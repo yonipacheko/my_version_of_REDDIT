@@ -34,7 +34,7 @@
       <div class="left well">
 
 
-      <li> <%= link_to(vote_post_path(post, vote: true), method: 'post') do %>
+      <li> <%= link_to vote_post_path(post, vote: true), method: 'post' if logged_in? do %>
           <i class="icon-chevron-left rotate-up"></i>
       <% end %>
       </li>
@@ -42,7 +42,7 @@
           <i class="icon-chevron-right rotate-down"></i>
 
       </li>
-          <% binding.pry %><span class="badge badge-info"><%= post.total_votes %></span>
+         <span class="badge badge-info"><%= post.total_votes%></span>
       <% end %>
 
 
