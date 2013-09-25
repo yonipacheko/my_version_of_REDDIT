@@ -33,18 +33,20 @@
     <% @posts.each do |post| %>
       <div class="left well">
 
+        <% if logged_in? %>
+          <li> <%= link_to (vote_post_path(post, vote: true, method: 'post') do %>
+              <i class="icon-chevron-left rotate-up"></i>
+          <% end %>
 
-      <li> <%= link_to vote_post_path(post, vote: true), method: 'post' if logged_in? do %>
-          <i class="icon-chevron-left rotate-up"></i>
-      <% end %>
-      </li>
-      <li>  <%= link_to(vote_post_path(post, vote: false), method: 'post') do %>
-          <i class="icon-chevron-right rotate-down"></i>
 
-      </li>
-         <span class="badge badge-info"><%= post.total_votes%></span>
-      <% end %>
+          </li>
+          <li>  <%= link_to(vote_post_path(post, vote: false, method: 'post') do %>
+              <i class="icon-chevron-right rotate-down"></i>
 
+          </li>
+             <span class="badge badge-info"><%= post.total_votes%></span>
+          <% end %>
+          <% end %>
 
 
       </div>

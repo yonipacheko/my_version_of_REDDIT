@@ -32,7 +32,7 @@
     <file path="$USER_HOME$/RubymineProjects/untitled2/main_1.js" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379076191116" ignored="false" />
     <file path="/main_1.js" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1378960194183" ignored="false" />
     <file path="/show.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379569682485" ignored="false" />
-    <file path="/index.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1380135526253" ignored="false" />
+    <file path="/index.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1380138495510" ignored="false" />
     <file path="/_navigation.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379618569198" ignored="false" />
     <file path="/new.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379615949469" ignored="false" />
     <file path="/edit.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379050378473" ignored="false" />
@@ -124,7 +124,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="23" selection-start="527" selection-end="527" vertical-scroll-proportion="0.15070923">
+            <state line="40" column="19" selection-start="693" selection-end="693" vertical-scroll-proportion="0.2712766">
               <folding>
                 <element signature="n#style#0;n#li#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#li#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
@@ -990,7 +990,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="23" selection-start="527" selection-end="527" vertical-scroll-proportion="0.15070923">
+        <state line="40" column="19" selection-start="693" selection-end="693" vertical-scroll-proportion="0.2712766">
           <folding>
             <element signature="n#style#0;n#li#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#li#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
