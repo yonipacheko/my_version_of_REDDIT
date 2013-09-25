@@ -1,14 +1,62 @@
+<style type="text/css">
+
+  h3{ color: chartreuse }
+
+  ul .left{
+    float:left;
+    margin-right: 10px;
+  }
+
+  .left{
+    width: 30px;
+  }
+  .left li{
+    float: left;
+    margin-right: 10px;
+    list-style: none;
+
+  }
+  .rotate-up{
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+  }
+  .rotate-down{
+    -webkit-transform:rotate(-270deg);
+    -moz-transform:rotate(-270deg);
+  }
+</style>
+
 <h3>Welcome!</h3>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li style="list-style: none;" class="well">
-      <%= link_to post.title, post_path(post) %> [ <%= link_to 'edit', edit_post_path(post) %> ]
 
-      <p>posted by <%= post.user.username %> on <%= pretty_date(post.created_at) %></p>
+  <ul>
+    <% @posts.each do |post| %>
+      <div class="left well">
 
-      <span class="badge badge-info"><%= post.comments.length %></span> <span style="color: #999;"><%= link_to 'comments inside', post_path(post) %></span>
 
-    </li>
-  <% end %>
-</ul>
+      <li> <%= link_to(vote_post_path(post, vote: true), method: 'post') do %>
+          <i class="icon-chevron-left rotate-up"></i>
+      <% end %>
+      </li>
+      <li>  <%= link_to(vote_post_path(post, vote: false), method: 'post') do %>
+          <i class="icon-chevron-right rotate-down"></i>
+
+      </li>
+          <% binding.pry %><span class="badge badge-info"><%= post.total_votes %></span>
+      <% end %>
+
+
+
+      </div>
+      <div class="right">
+      <li style="list-style: none;" class="well">
+        <%= link_to post.title, post_path(post) %> [ <%= link_to 'edit', edit_post_path(post) %> ]
+
+        <p>posted by < <%= post.user.username %> on <%= pretty_date(post.created_at) %></p>
+
+        <span class="badge badge-info"><%= post.comments.length %></span> <span style="color: #999;"><%= link_to 'comments inside', post_path(post) %></span>
+
+      </li>
+      </div>
+    <% end %>
+  </ul>

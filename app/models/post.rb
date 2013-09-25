@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+class Post   < ActiveRecord::Base
 
   BADWORDS =  ['bad', 'words']
 
@@ -7,12 +7,13 @@ class Post < ActiveRecord::Base
   has_many :comments
   has_many :categories, through: :post_categories
   has_many :post_categories
+  has_many :votes, as: :voteable
 
-  #validates :title, presence: true
+  validates :title, presence: true
 
   # OBS! this is a custom validation
 
-  validate :bad_words  # pay atention at validate is in SINGULAR,
+  validate :bad_words  # pay attention at validate is in SINGULAR,
 
   #custom validation ex:
 
@@ -25,7 +26,17 @@ class Post < ActiveRecord::Base
       end
     end
   end
+
+  def total_votes
+    self.votes.where(vote: true).size - self.votes.where(vote: false)
+  end
+
+
+
+
 end
+
+
 
 # when u use ':title' instead of ':base, check about the css-class that gets created
 #for future style-design, it's an error div.

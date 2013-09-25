@@ -1,7 +1,15 @@
 class PostsController < ApplicationController
+  # this method does this: @post = Post.find(params[:id])
+  before_action :set_post, only: [:show, :edit, :update, :vote ]
 
-  before_action :set_post, only: [:show, :edit, :update]
+  # this method does this:
+#  # def require_user
+#  if !logged_in?
+#    flash[:error] = 'Must be logged in to do that'
+#    redirect_to root_path
+#  end
 
+  before_action :require_user, only:[:new, :create, :edit, :update, :vote]
 
   def index
     @posts = Post.all
@@ -18,9 +26,15 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def vote
+    Vote.create(voteable: @post, user: current_user, vote: params[:vote])
+    flash[:notice] = 'Your vote was counted'
+    redirect_to root_path
+  end
+
   def create
     @post = Post.new(post_params)
-    @post.user = User.find(1) #for now....
+    @post.user = current_user
      if @post.save
        flash[:notice] = 'you created a post'
        redirect_to root_path
