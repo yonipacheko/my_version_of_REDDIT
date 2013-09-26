@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :settingAccessToCategories
 
 
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in? , :is_it_clicked?
 
   def current_user
 
@@ -25,6 +25,17 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+
+  def is_it_clicked?
+    counter += 1
+    if (counter > 1)
+      flash[:error] = "u can't click more than 2 times on this thread"
+      render 'posts/index'
+    end
+    counter = 1
+  end
+
 
   private
   def settingAccessToCategories
