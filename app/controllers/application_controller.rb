@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :settingAccessToCategories
 
 
-  helper_method :current_user, :logged_in? , :not_yet_voted?
+  helper_method :current_user, :logged_in? , :not_yet_voted(obj)
 
   def current_user
 
@@ -26,9 +26,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def not_yet_voted?
-     @post = @current_user.posts
-    true if @post.votes.find_by(user: current_user)
+  def not_yet_voted(obj)
+    true if obj.votes.find_by(user: current_user)
   end
 
 

@@ -32,7 +32,7 @@
     <file path="$USER_HOME$/RubymineProjects/untitled2/main_1.js" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379076191116" ignored="false" />
     <file path="/main_1.js" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1378960194183" ignored="false" />
     <file path="/show.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379569682485" ignored="false" />
-    <file path="/index.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1380213696553" ignored="false" />
+    <file path="/index.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1380226272718" ignored="false" />
     <file path="/_navigation.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379618569198" ignored="false" />
     <file path="/new.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379615949469" ignored="false" />
     <file path="/edit.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379050378473" ignored="false" />
@@ -46,7 +46,7 @@
     <file path="/_1.html" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379442114618" ignored="false" />
     <file path="$PROJECT_DIR$/../../../tealleaf/projects/postit-template_1/app/views/posts/index.html.erb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379247702674" ignored="false" />
     <file path="/20130915190129_add_timesstamps_to_posts.rb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379271769819" ignored="false" />
-    <file path="/application_controller.rb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1380214598026" ignored="false" />
+    <file path="/application_controller.rb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1380226384816" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/untitled2/pagination.js" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379556635523" ignored="false" />
     <file path="$PROJECT_DIR$/../../../tealleaf/projects/postit-template_1/db/schema.rb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379564199053" ignored="false" />
     <file path="$PROJECT_DIR$/../../../tealleaf/projects/postit-template_1/app/controllers/users_controller.rb" changelist="18a10d3c-2e09-4344-97d9-57d7ea918239" time="1379606119825" ignored="false" />
@@ -107,7 +107,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="40" selection-start="558" selection-end="558" vertical-scroll-proportion="-1.6470588">
+            <state line="51" column="30" selection-start="960" selection-end="960" vertical-scroll-proportion="-4.980392">
               <folding>
                 <element signature="n#style#0;n#li#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#li#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
@@ -146,7 +146,7 @@
       <file leaf-file-name="application_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="95" selection-start="651" selection-end="651" vertical-scroll-proportion="0.6767516">
+            <state line="34" column="54" selection-start="756" selection-end="756" vertical-scroll-proportion="0.8121019">
               <folding />
             </state>
           </provider>
@@ -202,8 +202,8 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/post.rb" />
         <option value="$PROJECT_DIR$/app/views/posts/vote.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/posts/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/posts/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
       </list>
     </option>
@@ -961,16 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="40" selection-start="558" selection-end="558" vertical-scroll-proportion="-1.6470588">
-          <folding>
-            <element signature="n#style#0;n#li#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#li#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/posts/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -992,9 +982,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="30" selection-start="960" selection-end="960" vertical-scroll-proportion="-4.980392">
+          <folding>
+            <element signature="n#style#0;n#li#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#li#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="95" selection-start="651" selection-end="651" vertical-scroll-proportion="0.6767516">
+        <state line="34" column="54" selection-start="756" selection-end="756" vertical-scroll-proportion="0.8121019">
           <folding />
         </state>
       </provider>
