@@ -26,6 +26,28 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def vote_action(obj, post_obj = nil)
+    @obj = obj
+    @post_obj = post_obj
+    @vote = Vote.new(voteable: @obj, user: current_user, vote: params[:vote])
+    if @vote.save
+      respond_to do |format|
+        format.html do
+          flash[:notice] = 'Your vote was counted'
+          redirect_to root_path
+        end
+        format.js do
+          flash[:notice] = 'Your vote was counted'
+
+          render 'posts/vote' #dont know yet
+        end
+      end
+    else
+      #render something
+      redirect_to :back
+    end
+  end
+
 
 
   private

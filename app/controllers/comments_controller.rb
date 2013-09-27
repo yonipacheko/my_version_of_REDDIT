@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+  before_action :set_comment, only: [:vote]
+
 
 
   def create
@@ -20,46 +22,11 @@ class CommentsController < ApplicationController
   end
 
   def vote
-    Vote.create(voteable: @comment, user: current_user, vote: params[:vote])
-
-    if @comment.votes.find_by(user: current_user)
-      flash[:alert] = 'A user can vote 1 time!'
-      redirect_to post_path
-    end
-    else
-      @post.votes.build(voteable: @post, user: current_user, vote: params[:vote] )
-      if @post.save
-        respond_to do |format|
-          format.html do
-            flash[:notice] = 'Your vote was counted'
-            redirect_to post_path
-          end
-          format.js
-        end
-      else
-      render 'posts/show'
-      end
+    vote_action(@comment, @post)
   end
 
-
-end
-
-
-
-if @post.votes.find_by(user: current_user)
-  flash[:alert] = 'A user can vote 1 time!'
-  redirect_to posts_path
-else
-  @post.votes.build(voteable: @post, user: current_user, vote: params[:vote] )
-  if @post.save
-    respond_to do |format|
-      format.html do
-        flash[:notice] = 'Your vote was counted'
-        redirect_to root_path
-      end
-      format.js
-    end
-  else
-    render 'posts/index'
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
+
 end

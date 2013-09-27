@@ -1,17 +1,8 @@
-function checking_up(element){
-  var counter = 1;
- if (counter < 2){
-   $(element).html("<=% @post.total_votes%>");
- }else{
-   alert("u can't!!");
- }
+<% if @post_obj %>
+$("#post_<%=@post_obj.id%>_comments_<%=@obj.id%>").html("<%=@obj.total_votes%>").css('border', '1px solid green');
+console.log("touch");
 
-
-
-
-}
-
-
-
-checking_up( $('.left span'));
-
+<% else %>
+$("#post_<%=@obj.id%>_votes").html("<%= @obj.total_votes %>").css('border', '1px solid red');
+console.log("<%=@obj.total_votes%>");
+<% end %>
