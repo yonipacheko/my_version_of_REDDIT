@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :settingAccessToCategories
 
 
-  helper_method :current_user, :logged_in? , :not_yet_voted(obj)
+  helper_method :current_user, :logged_in?
 
   def current_user
 
@@ -24,10 +24,6 @@ class ApplicationController < ActionController::Base
       flash[:error] = 'Must be logged in to do that'
       redirect_to root_path
     end
-  end
-
-  def not_yet_voted(obj)
-    true if obj.votes.find_by(user: current_user)
   end
 
 
