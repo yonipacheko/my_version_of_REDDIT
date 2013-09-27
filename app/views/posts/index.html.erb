@@ -1,62 +1,33 @@
 <style type="text/css">
 
-  h3 {
-    color: chartreuse
-  }
 
-  ul .left {
-    float: left;
-    margin-right: 10px;
-  }
-
-  .left {
-    width: 30px;
-  }
-
-  .left li {
-    float: left;
-    margin-right: 10px;
-    list-style: none;
-
-  }
-
-  .rotate-up {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-  }
-
-  .rotate-down {
-    -webkit-transform: rotate(-270deg);
-    -moz-transform: rotate(-270deg);
-  }
 </style>
 
 <h3>Welcome!</h3>
 
+<% @posts.each do |post| %>
 
-<ul>
-  <% @posts.each do |post| %>
+<div class="left well">
 
-    <div class="left well">
+  <% if logged_in? %>
 
-     <% if logged_in? %>
+    <li> <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
+        <i class="icon-chevron-left rotate-up"></i>
+      <% end %>
+    </li>
 
-        <li class="vote_up"> <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
-            <i class="icon-chevron-left rotate-up"></i>
-          <% end %>
+    <li>  <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
+        <i class="icon-chevron-right rotate-down"></i>
         </li>
-
-        <li>  <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
-            <i class="icon-chevron-right rotate-down"></i>
-            </li>
-            <span class="badge badge-info"><%= post.total_votes %></span>
-          <% end %>
-
+        <span class="badge badge-info"><%= post.total_votes %></span>
       <% end %>
 
-    </div>
+  <% end %>
 
-    <div class="right">
+</div>
+<div class="right">
+<ul>
+
       <li style="list-style: none;" class="well">
         <p> <span class="badge badge-info">
           <% post.categories.each do |i| %>
@@ -75,6 +46,8 @@
 
       </li>
 
-    </div>
-  <% end %>
+
+
 </ul>
+</div>
+<% end %>
