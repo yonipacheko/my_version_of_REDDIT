@@ -1,9 +1,4 @@
 <h3>Create a new post</h3>
 
-<% if @post.errors.any?  %>
-  <% @post.errors.full_messages.each do |msg| %>
-    <%= msg %>
-  <% end %>
-<% end %>
 
 <%= render 'form'  %> <!-- we render _form.html.erb but without the '_' - hypo -->

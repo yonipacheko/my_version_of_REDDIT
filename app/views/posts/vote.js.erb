@@ -1,8 +1,9 @@
 <% if @post_obj %>
-$("#post_<%=@post_obj.id%>_comments_<%=@obj.id%>").html("<%=@obj.total_votes%>").css('border', '1px solid green');
-console.log("touch");
+$("#post_<%=@post_obj.id%>_comments_<%=@obj.id%>").html("<%=@obj.total_votes%>");
+alert("touch");
 
 <% else %>
-$("#post_<%=@obj.id%>_votes").html("<%= @obj.total_votes %>").css('border', '1px solid red');
+$("#post_<%=@obj.id%>_votes").html("<%= @obj.total_votes %>");
 console.log("<%=@obj.total_votes%>");
 <% end %>
+

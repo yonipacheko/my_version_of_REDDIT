@@ -37,8 +37,6 @@ class ApplicationController < ActionController::Base
           redirect_to root_path
         end
         format.js do
-          flash[:notice] = 'Your vote was counted'
-
           render 'posts/vote' #dont know yet
         end
       end

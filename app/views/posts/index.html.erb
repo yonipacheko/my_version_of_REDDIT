@@ -18,10 +18,10 @@
 
     <li>  <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
         <i class="icon-chevron-right rotate-down"></i>
-        </li>
+
         <span id="post_<%=post.id%>_votes" class=""><%= post.total_votes %></span>
       <% end %>
-
+    </li>
   <% end %>
 
 </div>

@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def show
-   # @post = Post.find(params[:id])
+   # @post = Post.find(params[:id])    we use set_post method
   @comment = Comment.new
   @posts = Post.all
 
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   #  end
   #  end
 
-    vote_action(@comment, @post)
+    vote_action(@post)
 
   end
 
@@ -68,11 +68,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+   # @post = Post.find(params[:id])   we use set_post method
   end
 
   def update
-   @post = Post.find(params[:id])
+   #@post = Post.find(params[:id])   we use set_post method
     if @post.update (post_params)
       flash[:notice] = 'This was updated'
       redirect_to post_path(@post)
@@ -84,7 +84,7 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find_by slug: params[:id]
   end
   def post_params
     params.require(:post).permit!  #.permit.(:title, :url, :description, :category_ids)

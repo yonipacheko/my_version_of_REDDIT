@@ -34,22 +34,20 @@
 
 <h3>List of comments</h3>
 
-<% @posts.each do |post| %>
-
 <% @post.comments.each do |comment|  %>
 
   <div class="row">
     <div class="well div_left">
 
       <ul>
-        <li> <%= link_to vote_post_comment_path(post, comment, vote: true), method: 'post', remote: true do %>
+        <li> <%= link_to vote_post_comment_path(@post, comment, vote: true), method: 'post', remote: true do %>
             <i class="icon-chevron-left rotate-up"></i>
           <% end %>
         </li>
 
-        <li>  <%= link_to vote_post_comment_path(post, comment, vote: false), method: 'post', remote: true do %>
+        <li>  <%= link_to vote_post_comment_path(@post, comment, vote: false), method: 'post', remote: true do %>
             <i class="icon-chevron-right rotate-down"></i>
-            <span id="post_<%=post.id%>_comments_<%=comment.id%>" class="badge badge-info"><%= comment.total_votes %></span>
+            <span id="post_<%=@post.id%>_comments_<%=comment.id%>" class="badge badge-info"><%= comment.total_votes %></span>
           <% end %>
         </li>
       </ul>
@@ -64,7 +62,6 @@
     </div>
   </div>
 
-<% end %>
 <% end %>
 
 

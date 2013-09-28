@@ -1,0 +1,8 @@
+<% binding.pry %><h3>All posts for : </h3> <%=@category.name %>
+
+
+<% @categories.each  do |c| %>
+
+  <%= c.name  %>
+
+<% end %>
