@@ -1,6 +1,9 @@
 class CategoriesController < ApplicationController
+  before_action :require_admin
   def new
     @category = Category.new
+    #@test = 'fck u app'
+
   end
 
   def create
@@ -13,13 +16,13 @@ class CategoriesController < ApplicationController
       render :new
 
     end
-
-    def show
-
-      @post = Post.find(params[:id])
-      @show_category = Category.find(params[:id])
-      @categories = Category.all
-
-    end
   end
+  def show
+      @categories = Category.all
+      @test = 'fck u app'
+      #@post = Post.find(params[:id])
+      @show_category = Category.find_by slug: params[:id]
+
+  end
+
 end

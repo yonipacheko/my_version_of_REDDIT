@@ -1,8 +1,11 @@
-<h3>All posts for: </h3> <%=@show_category.name %>
+<h3>All posts for: <%= @show_category.name %>  </h3>
 
 
-<% @categories.each  do |c| %>
-
-  <%= c.name  %>
+<% @show_category.posts.each do |c| %>
+  <ul>
+    <li> <%= c.title %></li>
+  </ul>
 
 <% end %>
+
+
