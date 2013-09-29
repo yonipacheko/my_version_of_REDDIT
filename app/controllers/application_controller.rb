@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :settingAccessToCategories
-
+  before_filter :set_timezone
 
   helper_method :current_user, :logged_in?
 
@@ -51,6 +51,12 @@ class ApplicationController < ActionController::Base
       flash[:error] = "Can't do that"
       redirect_to root_path
     end
+  end
+
+
+  def set_timezone
+    tz = current_user ? current_user.time_zone : nil
+    Time.zone = tz ||ActiveSupport::TimeZone::MAPPING.select {|k, v| v == "Europe/Stockholm" }.keys.first
   end
 
 

@@ -13,6 +13,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    myArray = []  #empty array
+
+    respond_to do |format|
+      format.html
+      format.js {render json: {myArray:  @posts.as_json(only: [:title])}.to_json }
+    end
 
 
   end

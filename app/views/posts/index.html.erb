@@ -27,19 +27,21 @@
 </div>
 <div class="right">
 <ul>
-
       <li style="list-style: none;" class="well">
-        <p> <span class="badge badge-info">
+        <p>
+          <span class="badge badge-info">
           <% post.categories.each do |i| %>
             <%= i.name %>
           <% end %>
+          </span>
+        </p>
+        <%  if current_user && current_user.admin? %>
+          <%= link_to post.title, post_path(post) %> [ <%= link_to 'edit', edit_post_path(post) %> ]
+        <% else %>
+          <%= link_to post.title, post_path(post) %> <span class="label">no admin?, U can't edit post </span>
+        <% end %>
 
-
-
-        </span></p>
-        <%= link_to post.title, post_path(post) %> [ <%= link_to 'edit', edit_post_path(post) %> ]
-
-        <p>posted by  <%= post.user.username %> on <%= pretty_date(post.created_at) %></p>
+          <p>posted by  <%= post.user.username %> on <%= pretty_date(post.created_at) %></p>
 
         <span class="badge badge-info"><%= post.comments.length %></span>
         <span style="color: #999;"><%= link_to 'comments inside', post_path(post) %></span>

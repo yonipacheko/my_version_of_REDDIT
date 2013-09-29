@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
     self.role == 'admin'
   end
 
+
+
 end

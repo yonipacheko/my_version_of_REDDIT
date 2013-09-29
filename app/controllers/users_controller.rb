@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def new
       @user = User.new
+      @someting = countries
   end
 
   def create
@@ -15,9 +16,15 @@ class UsersController < ApplicationController
 
   end
 
+
+
+  def countries
+      ActiveSupport::TimeZone.new("Europe/Stockholm")
+  end
+
   private
 
   def  user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :time_zone)
   end
 end
