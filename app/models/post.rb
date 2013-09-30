@@ -1,6 +1,6 @@
 class Post   < ActiveRecord::Base
 
-  include Voteable
+  #include Voteable
 
   BADWORDS =  ['bad', 'words']
 
@@ -30,9 +30,9 @@ class Post   < ActiveRecord::Base
     end
   end
 
-  #def total_votes
-  #  self.votes.where(vote: true).size - self.votes.where(vote: false).size
-  #end
+  def total_votes
+    self.votes.where(vote: true).size - self.votes.where(vote: false).size
+  end
 
   def generate_slug
     self.slug = self.title.gsub(' ','-').downcase

@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
           redirect_to root_path
         end
         format.js do
-          render 'posts/vote' #dont know yet
+          render 'posts/vote'
         end
       end
     else
