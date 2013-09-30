@@ -8,7 +8,7 @@ module ApplicationHelper
 
   def pretty_date(dt)
 
-    dt = dt.in_time_zone(current_user.time_zone) || Time.zone.name if logged_in?
+    dt = dt.in_time_zone(current_user.time_zone || Time.zone.name) if logged_in?
 
     dt.strftime("%b %d, %Y %l:%M%P %Z")
 

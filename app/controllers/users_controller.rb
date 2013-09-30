@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
 
   def countries
-      ActiveSupport::TimeZone.new("Europe/Stockholm")
+      @zone = ActiveSupport::TimeZone.new("Asia/Tokyo")
   end
 
   private
