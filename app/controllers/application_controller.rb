@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     if !logged_in? || !current_user.admin?
-      flash[:error] = "Can't do that"
+      flash[:error] = "You can't see the categories, You need to log in, try again!"
       redirect_to root_path
     end
   end

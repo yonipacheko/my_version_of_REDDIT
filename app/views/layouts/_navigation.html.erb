@@ -43,6 +43,14 @@
 
     </ul>
   </div>
+  <% if logged_in? %>
+    <div class="btn-group nav_item">
+      <%= link_to '#', class: 'btn  btn-info btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+        Hej <%= current_user.username %>!
+        <span class="caret"></span>
+      <% end %>
+    </div>
+  <% end %>
 
 
 </ul>

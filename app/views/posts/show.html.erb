@@ -1,24 +1,8 @@
-<style type="text/css">
 
-  .row div{
-    float: left;
-  }
-
-.div_left{
-  width: 30px;
-}
-
-.div_right{
-  width: 800px;
-  margin-left: 20px;
-}
-
-</style>
-<h1 class="well">You are  reading this post with this title: </h1>
-
-<div class="well">
-  <p><%= link_to @post.title, fix_url(@post.url) %> </p>
-  <p>Description: <%= @post.description %> </p>
+<div class="">
+  <p class="lead"><%= link_to @post.title, fix_url(@post.url) %> </p>
+  <p>Description:</p>
+  <p class="muted"><%= @post.description %> </p>
 </div>
 
 <h3>Comments</h3>
@@ -40,15 +24,16 @@
     <div class="well div_left">
 
       <ul>
-        <li> <%= link_to vote_post_comment_path(@post, comment, vote: true), method: 'post', remote: true do %>
+        <li class="voting_icon"> <%= link_to vote_post_comment_path(@post, comment, vote: true), method: 'post', remote: true do %>
             <i class="icon-chevron-left rotate-up"></i>
           <% end %>
         </li>
 
-        <li>  <%= link_to vote_post_comment_path(@post, comment, vote: false), method: 'post', remote: true do %>
+        <li class="voting_icon">  <%= link_to vote_post_comment_path(@post, comment, vote: false), method: 'post', remote: true do %>
             <i class="icon-chevron-right rotate-down"></i>
-            <span id="post_<%=@post.id%>_comments_<%=comment.id%>" class="badge badge-info"><%= comment.total_votes %></span>
           <% end %>
+        </li>
+        <li> <span id="post_<%=@post.id%>_comments_<%=comment.id%>" class="badge badge-info"><%= comment.total_votes %></span>
         </li>
       </ul>
     </div>

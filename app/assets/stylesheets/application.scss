@@ -53,9 +53,14 @@ style for the comments and post list
   color: rosybrown;
 }
 
+
+.container .row{
+
+}
+
 .container .left {
-  float: left;
   margin-right: 10px;
+  float: left;
 }
 
 .container .right{
@@ -69,7 +74,6 @@ style for the comments and post list
 
 
 .container .left {
-  width: 30px;
 }
 
 .container .left ul {
@@ -79,6 +83,11 @@ style for the comments and post list
   list-style: none;
 
 }
+
+.container .left li{
+  list-style: none;
+}
+
 
 .container .rotate-up {
   -webkit-transform: rotate(90deg);
@@ -93,4 +102,49 @@ style for the comments and post list
 .container #comments .something{
   width: 30px;
   float: left;
+}
+
+
+
+.container .row .div_left{
+  float: left;
+}
+
+.container .row .div_right{
+  width: 800px;
+  margin-left: 90px;
+}
+.container .row .div_left ul{
+  margin: 0;
+  padding: 0;
+}
+.container .row .div_left ul li{
+  list-style: none;
+}
+.container .row .div_left ul li.voting_icon{
+  margin-left: 9px;
+}
+
+.container .row .lead{
+  padding-bottom: 30px;
+  border-bottom: 1px solid silver;
+  width: 600px;
+}
+
+.container .row .muted{
+  padding-bottom: 30px;
+  border-bottom: 1px solid silver;
+  width: 600px;
+
+}
+
+#btn_form{
+  margin-top: 20px;
+  border-top: 1px solid silver;
+  width: 400px;
+  padding-top: 20px;
+}
+
+.nav div:last-child{
+  margin-left: 40px;
 }

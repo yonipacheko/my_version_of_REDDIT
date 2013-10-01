@@ -25,5 +25,5 @@ Existing obj: PUT or PATCH to /posts/id (1, 2, 3, 4)
   <%= f.collection_check_boxes :category_ids, @categories, :id, :name do |cb| %>
     <% cb.label(class:'checkbox inline') {cb.check_box(class: 'checkbox') + cb.text} %>
   <% end %>
-  <%= f.submit (@post.new_record? ? 'Create Post' : 'Update Post') %>
+  <p id="btn_form"><%= f.submit (@post.new_record? ? 'Create Post' : 'Update Post'), class: "btn btn-success" %><p>
 <% end %>

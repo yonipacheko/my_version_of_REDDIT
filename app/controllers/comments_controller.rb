@@ -22,6 +22,7 @@ class CommentsController < ApplicationController
   end
 
   def vote
+    @post  = Post.find_by slug: params[:post_id]
     vote_action(@comment, @post)
   end
 

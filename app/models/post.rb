@@ -1,6 +1,6 @@
 class Post   < ActiveRecord::Base
 
-  #include Voteable
+  include VoteableFerSept, SlugFerGem
 
   BADWORDS =  ['bad', 'words']
 
@@ -9,7 +9,6 @@ class Post   < ActiveRecord::Base
   has_many :comments
   has_many :categories, through: :post_categories
   has_many :post_categories
-  has_many :votes, as: :voteable
 
   validates :title, presence: true
 
@@ -30,17 +29,19 @@ class Post   < ActiveRecord::Base
     end
   end
 
-  def total_votes
-    self.votes.where(vote: true).size - self.votes.where(vote: false).size
-  end
+  #All the functions bellow became 2 different gems (^:^)
 
-  def generate_slug
-    self.slug = self.title.gsub(' ','-').downcase
-  end
+  #def total_votes
+  #  self.votes.where(vote: true).size - self.votes.where(vote: false).size
+  #end
 
-  def to_param
-    self.slug
-  end
+  #def generate_slug
+  #  self.slug = self.title.gsub(' ','-').downcase
+  #end
+  #
+  #def to_param
+  #  self.slug
+  #end
 
 
 

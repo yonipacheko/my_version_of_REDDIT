@@ -7,24 +7,23 @@
 
 <% @posts.each do |post| %>
 
-<div class="left well">
-
   <% if logged_in? %>
+    <div class="left well">
+      <li> <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
+          <i class="icon-chevron-left rotate-up"></i>
+        <% end %>
+      </li>
 
-    <li> <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
-        <i class="icon-chevron-left rotate-up"></i>
-      <% end %>
-    </li>
+      <li>  <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
+          <i class="icon-chevron-right rotate-down"></i>
 
-    <li>  <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
-        <i class="icon-chevron-right rotate-down"></i>
-
-        <span id="post_<%=post.id%>_votes" class=""><%= post.total_votes %></span>
-      <% end %>
-    </li>
+        <% end %>
+      </li>
+      <li><span class="badge badge-info" id="post_<%=post.id%>_votes"><%= post.total_votes %></span>
+      </li>
+    </div>
   <% end %>
 
-</div>
 <div class="right">
 <ul>
       <li style="list-style: none;" class="well">

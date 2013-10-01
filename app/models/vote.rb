@@ -7,7 +7,7 @@ class Vote < ActiveRecord::Base
   #after_validation :showing_message
 
 
-
+# This is not been used yet
   def showing_message
     #if self.user.find_by(User.find(session[:user_id]))
       errors.add(:base, 'A user can vote only once!')

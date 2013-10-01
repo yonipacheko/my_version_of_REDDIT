@@ -14,6 +14,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby', '=3.0.1'
 
+gem 'voteable_fer_sept'
+gem 'slug_fer_sept'
+
 group :doc do
   gem 'sdoc', require: false
 end

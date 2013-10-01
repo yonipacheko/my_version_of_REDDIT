@@ -1,6 +1,5 @@
 <% if @post_obj %>
 $("#post_<%=@post_obj.id%>_comments_<%=@obj.id%>").html("<%=@obj.total_votes%>");
-alert("touch");
 
 <% else %>
 $("#post_<%=@obj.id%>_votes").html("<%= @obj.total_votes %>");
